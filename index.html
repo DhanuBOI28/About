@@ -10,7 +10,8 @@
 
         body {
             font-family: 'Comic Neue', sans-serif;
-            background: linear-gradient(135deg, #000000, #434343);
+            background: url('https://images.unsplash.com/photo-1593642532973-d31b6557fa68?fit=crop&w=1280&h=720') no-repeat center center fixed; 
+            background-size: cover;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
@@ -20,14 +21,14 @@
 
         body::before {
             content: "";
-            background: url('https://www.transparenttextures.com/patterns/black-linen.png');
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            opacity: 0.5;
-            animation: backgroundMove 10s linear infinite;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(67, 67, 67, 0.7));
+            mix-blend-mode: overlay;
+            z-index: 0;
         }
 
         .container {
@@ -93,11 +94,6 @@
             50% { color: #ff4500; }
             100% { color: #ff6347; }
         }
-
-        @keyframes backgroundMove {
-            from { background-position: 0 0; }
-            to { background-position: 100% 100%; }
-        }
     </style>
 </head>
 <body>
@@ -129,5 +125,7 @@
             content.style.transform = `translateY(${scrollY * 0.9}px)`;
         });
     </script>
+</body>
+</html>
 </body>
 </html>
