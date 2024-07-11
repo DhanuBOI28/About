@@ -42,12 +42,17 @@
             font-size: 2.5em;
             margin-bottom: 20px;
             animation: fadeIn 2s;
+            animation: colorChange 5s infinite alternate;
+            background: linear-gradient(45deg, #ff6347, #ff4500, #ff6347);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% 200%;
         }
 
         .sub-header {
             font-size: 1.5em;
             margin-bottom: 10px;
-            animation: slideIn 2s, colorChange 3s linear infinite;
+            animation: slideIn 2s;
         }
 
         .content {
@@ -90,9 +95,9 @@
         }
 
         @keyframes colorChange {
-            0% { color: #ff6347; }
-            50% { color: #ff4500; }
-            100% { color: #ff6347; }
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
     </style>
 </head>
@@ -107,8 +112,8 @@
         </div>
         <div class="links">
             <a href="https://github.com/DhanuBOI28" target="_blank"><i class="fab fa-github"></i>GitHub</a>
-            <a href="https://instagram.com/yourprofile" target="_blank"><i class="fab fa-instagram"></i>Instagram</a>
-            <a href="https://youtube.com/yourchannel" target="_blank"><i class="fab fa-youtube"></i>YouTube</a>
+            <a href="https://www.instagram.com/dhanuboii?igsh=MXZxemlnYjg1OW01aA==" target="_blank"><i class="fab fa-instagram"></i>Instagram</a>
+            <a href="https://youtube.com/@dhanudev_?feature=shared" target="_blank"><i class="fab fa-youtube"></i>YouTube</a>
         </div>
     </div>
     <script>
