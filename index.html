@@ -3,54 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Styled HTML Page</title>
+    <title>About Me</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap');
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Comic Neue', sans-serif;
+            background: linear-gradient(135deg, #000000, #434343);
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            overflow-x: hidden;
+            color: #ffffff;
+            position: relative;
         }
+
+        body::before {
+            content: "";
+            background: url('https://www.transparenttextures.com/patterns/black-linen.png');
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.5;
+            animation: backgroundMove 10s linear infinite;
+        }
+
         .container {
-            width: 80%;
-            margin: 0 auto;
-            overflow: hidden;
-        }
-        header {
-            background: #333;
-            color: #fff;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #0779e4 3px solid;
-        }
-        header h1 {
             text-align: center;
-            margin: 0;
-            font-size: 24px;
+            padding: 50px;
+            position: relative;
+            z-index: 1;
         }
+
+        .header {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            animation: fadeIn 2s;
+        }
+
+        .sub-header {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            animation: slideIn 2s, colorChange 3s linear infinite;
+        }
+
         .content {
-            padding: 20px;
-            background: #fff;
-            margin-top: 20px;
+            font-size: 1.2em;
+            margin: 20px 0;
+            line-height: 1.5;
+            animation: fadeInUp 3s;
         }
-        .content p {
-            font-size: 18px;
-            line-height: 1.6;
+
+        .links a {
+            display: inline-block;
+            margin: 10px;
+            font-size: 1.5em;
+            color: #ff6347;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .links a:hover {
+            color: #ff4500;
+        }
+
+        .links a i {
+            margin-right: 8px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes colorChange {
+            0% { color: #ff6347; }
+            50% { color: #ff4500; }
+            100% { color: #ff6347; }
+        }
+
+        @keyframes backgroundMove {
+            from { background-position: 0 0; }
+            to { background-position: 100% 100%; }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>HMMM</h1>
-        </div>
-    </header>
     <div class="container">
+        <div class="header">Hello, I'm Dhanu! 👋</div>
+        <div class="sub-header">Real Name: [Why will I tell you, bruh?]</div>
         <div class="content">
-            <h2>About This Me</h2>
-            <p>I am a programmer </p>
-            <p>  nothing more </p>
+            I am a <strong>Programmer</strong> / <strong>Game Developer</strong>.<br>
+            I use Java, HTML, JavaScript, Python, and more.<br><br>
+            I love to watch anime, movies, web series, and K-dramas! 🎥📺<br>
+        </div>
+        <div class="links">
+            <a href="https://github.com/DhanuBOI28" target="_blank"><i class="fab fa-github"></i>GitHub</a>
+            <a href="https://instagram.com/yourprofile" target="_blank"><i class="fab fa-instagram"></i>Instagram</a>
+            <a href="https://youtube.com/yourchannel" target="_blank"><i class="fab fa-youtube"></i>YouTube</a>
         </div>
     </div>
+    <script>
+        // Add scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            const subHeader = document.querySelector('.sub-header');
+            const content = document.querySelector('.content');
+            
+            const scrollY = window.scrollY;
+            
+            header.style.transform = `translateY(${scrollY * 0.5}px)`;
+            subHeader.style.transform = `translateY(${scrollY * 0.7}px)`;
+            content.style.transform = `translateY(${scrollY * 0.9}px)`;
+        });
+    </script>
 </body>
 </html>
